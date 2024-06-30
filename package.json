@@ -11,6 +11,7 @@
     "migrate": "bunx edgedb migration create && bunx edgedb migrate && bun prebuild"
   },
   "dependencies": {
+    "@edgedb/auth-nextjs": "^0.3.1",
     "edgedb": "^1.5.7",
     "next": "14.2.4",
     "react": "^18",
