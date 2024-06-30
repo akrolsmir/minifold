@@ -7,7 +7,8 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "prebuild": "npx @edgedb/generate edgeql-js"
+    "prebuild": "npx @edgedb/generate edgeql-js",
+    "migrate": "bunx edgedb migration create && bunx edgedb migrate && bun prebuild"
   },
   "dependencies": {
     "edgedb": "^1.5.7",

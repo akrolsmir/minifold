@@ -15,6 +15,7 @@ async function createPost(formData: FormData) {
     .insert(e.BlogPost, {
       title: title,
       content: content,
+      author: e.global.current_user,
     })
     .run(client)
 
@@ -61,7 +62,6 @@ export default function NewPost() {
           Create Post
         </button>
       </form>
-      222
     </div>
   )
 }

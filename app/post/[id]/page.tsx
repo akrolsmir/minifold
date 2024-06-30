@@ -10,6 +10,9 @@ export default async function Post({ params }: { params: { id: string } }) {
       id: true,
       title: true,
       content: true,
+      author: {
+        name: true,
+      },
       filter_single: e.op(post.id, '=', e.uuid(params.id)),
     }))
     .run(client)
@@ -25,8 +28,11 @@ export default async function Post({ params }: { params: { id: string } }) {
           Back to list
         </Link>
       </nav>
-      <h1 className="text-3xl font-bold mb-4">{post.title}</h1>
-      <p>{post.content}</p>
+      <div className="flex flex-col gap-4">
+        <h1 className="text-3xl font-bold mb-4">{post.title}</h1>
+        <p className="italic">By {post.author.name}</p>
+        <p>{post.content}</p>
+      </div>
     </div>
   )
 }

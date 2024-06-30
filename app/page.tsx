@@ -1,6 +1,7 @@
 import Link from 'next/link'
 import { createClient } from 'edgedb'
 import e from '@/dbschema/edgeql-js'
+import { AuthLinks } from '@/components/auth-links'
 
 const client = createClient()
 
@@ -30,6 +31,7 @@ export default async function Home() {
       >
         Create New Post
       </Link>
+      <AuthLinks />
     </div>
   )
 }
